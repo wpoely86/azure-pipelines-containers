@@ -1,0 +1,8 @@
+## emacs
+*~
+.#*
+*.orig
+*.bak
+## vim
+*.sw[op]
+*.log
