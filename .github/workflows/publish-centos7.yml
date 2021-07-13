@@ -3,7 +3,7 @@ on:
   push:
     branches: [ main ]
     paths:
-      - 'centos7/*'
+      - 'azure-pipelines-centos7/*'
   schedule:
     # rebuild image every Sunday
     - cron: '53 3 * * 0'
@@ -21,9 +21,9 @@ jobs:
       with:
         image: azure-pipelines-centos7
         tags: latest ${{ github.sha }}
-        context: centos7
+        context: azure-pipelines-centos7
         dockerfiles: |
-          ./centos7/Dockerfile
+          ./azure-pipelines-centos7/Dockerfile
 
     - name: Publish image on quay.io
       id: push-to-quay

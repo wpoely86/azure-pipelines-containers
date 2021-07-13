@@ -2,10 +2,10 @@ name: Test building azure-pipelines-centos7 image
 on:
   push:
     paths:
-      - 'centos7/*'
+      - 'azure-pipelines-centos7/*'
   pull_request:
     paths:
-      - 'centos7/*'
+      - 'azure-pipelines-centos7/*'
 
 
 jobs:
@@ -20,6 +20,6 @@ jobs:
       with:
         image: azure-pipelines-centos7
         tags: ${{ github.sha }}
-        context: centos7
+        context: azure-pipelines-centos7
         dockerfiles: |
-          ./centos7/Dockerfile
+          ./azure-pipelines-centos7/Dockerfile
