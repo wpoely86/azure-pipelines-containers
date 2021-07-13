@@ -33,7 +33,7 @@ jobs:
         tags: ${{ steps.build-image.outputs.tags }}
         registry: quay.io/vub-hpc
         username: vub-hpc+github_actions
-        password: ${{ secrets.REGISTRY_PASSWORD }}
+        password: ${{ secrets.QUAY_REGISTRY_PASSWORD }}
 
     - name: Print image url
       run: echo "Image pushed to ${{ steps.push-to-quay.outputs.registry-paths }}"
