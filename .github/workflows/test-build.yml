@@ -1,4 +1,4 @@
-name: Test building container image for azure-pipelines-centos7
+name: Test building azure-pipelines-centos7 image
 on:
   push:
     paths:
