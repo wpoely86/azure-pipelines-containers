@@ -1,0 +1,25 @@
+name: Test building azure-pipelines-centos7 image
+on:
+  push:
+    paths:
+      - 'azure-pipelines-centos7/*'
+  pull_request:
+    paths:
+      - 'azure-pipelines-centos7/*'
+
+
+jobs:
+  build:
+    name: Build image for azure-pipelines-centos7
+    runs-on: ubuntu-20.04
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Build Image
+      uses: redhat-actions/buildah-build@v2
+      with:
+        image: azure-pipelines-centos7
+        tags: ${{ github.sha }}
+        context: azure-pipelines-centos7
+        dockerfiles: |
+          ./azure-pipelines-centos7/Dockerfile
